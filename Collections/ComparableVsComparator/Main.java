@@ -20,6 +20,7 @@ public class Main {
         Collections.sort(students, new SortByNameThenMarks());
 
         for (Student student : students)
+            System.out.println(student);
     }
 }
 
