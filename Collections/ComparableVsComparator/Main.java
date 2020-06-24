@@ -17,7 +17,16 @@ public class Main {
         students.add(new Student("Xdd", 87));
         students.add(new Student("Ok Boomer", 74));
 
+        //Method 1 to use Comparator
         Collections.sort(students, new SortByNameThenMarks());
+        
+        ////Method 2 to use Comparator
+        Collections.sort(knapsack, new Comparator<Knapsack>(){    
+		    @Override
+		    public int compare(Student o1, Student o2){
+		        return o1.marks - o2.marks;     //Ascending order
+		    }            
+		});
 
         for (Student student : students)
             System.out.println(student);
@@ -29,7 +38,7 @@ class SortByNameThenMarks implements Comparator<Student> {
     @Override
     public int compare(Student o1, Student o2) {
         if (o1.name.equals(o2.name)) {
-            return o1.marks - o2.marks;
+            return o1.marks - o2.marks;     //Ascending order
         }
         else {
             return o1.name.compareTo(o2.name);
