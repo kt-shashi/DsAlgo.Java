@@ -1,4 +1,4 @@
-package com.shashi.dsalgo;
+package com.shashi.dsalgo.collectionsdemo;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

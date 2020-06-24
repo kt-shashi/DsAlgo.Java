@@ -1,4 +1,4 @@
-package com.shashi.dsalgo;
+package com.shashi.dsalgo.collectionsdemo;
 
 import java.util.ArrayList;
 import java.util.Collection;
