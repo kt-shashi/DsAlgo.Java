@@ -1,4 +1,4 @@
-package com.shashi.dsalgo.numbertheory;
+package com.shashi.dsalgo.mathematics;
 
 //make a boolean array of size N and initialize with true
 //mark 0 and 1 as false

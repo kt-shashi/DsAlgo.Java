@@ -1,4 +1,4 @@
-package com.shashi.dsalgo.numbertheory;
+package com.shashi.dsalgo.mathematics;
 
 //Euclid's algorithm to find gdc
 
