@@ -1,4 +1,4 @@
-package com.shashi.dsalgo.sorting;
+package com.shashi.dsalgo.searchingandsorting;
 
 public class MergeSortDemo {
 

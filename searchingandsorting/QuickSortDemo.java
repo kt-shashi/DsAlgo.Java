@@ -1,4 +1,4 @@
-package com.shashi.dsalgo.sorting;
+package com.shashi.dsalgo.searchingandsorting;
 
 //select the middle element as pivot
 //move all elements smaller than the pivot to left of the array

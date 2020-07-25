@@ -1,4 +1,4 @@
-package com.shashi.dsalgo.sorting;
+package com.shashi.dsalgo.searchingandsorting;
 
 public class SelectionSortDemo {
     public static void main(String[] args) {
