@@ -28,17 +28,74 @@ package com.shashi.dsalgo.searchingandsorting;
 
 public class SearchInSortedAndRotatedArray {
 
+    //Approach:
+    //Find the index of smalled element
+    //Apply binary search  in the array in
+    //both the sorted halves
+
     public static int Search(int a[], int k) {
-        // code here
+        int index = timesSorted(a, a.length);
+        int low = 0, high = a.length - 1;
+
+        int leftHalf = binarySearch(a, k, low, index - 1);
+        int rightHalf = binarySearch(a, k, index, high);
+
+        if (leftHalf == -1 && rightHalf == -1) {
+            return leftHalf;
+        } else {
+            if (leftHalf != -1)
+                return leftHalf;
+            else
+                return rightHalf;
+        }
+    }
+
+    //utility function to find the index of smallest element
+    public static int timesSorted(int[] a, int n) {
+        int start = 0;
+        int end = n - 1;
+        if (a[start] < a[end]) {
+            return 0;
+        }
+        int mid = 0;
+        while (start <= end) {
+            mid = start + (end - start) / 2;
+            int prevElement = (mid - 1 + n) % n;
+            int nextElement = (mid + 1) % n;
+
+            if (a[mid] < a[prevElement] && a[mid] < a[nextElement]) {
+                return mid;
+            } else if (a[end] < a[mid]) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
         return 0;
+    }
+
+    //utility function to use Binarysearch
+    public static int binarySearch(int[] a, int k, int lowerLimit, int upperLimit) {
+        int middleValue;
+        while (lowerLimit <= upperLimit) {
+            middleValue = lowerLimit + (upperLimit - lowerLimit) / 2;
+            if (a[middleValue] < k) {
+                lowerLimit = middleValue + 1;
+            } else if (a[middleValue] > k) {
+                upperLimit = middleValue - 1;
+            } else {
+                return middleValue;
+            }
+        }
+        return -1;
     }
 
     public static void main(String[] args) {
         int[] a1 = {5, 6, 7, 8, 9, 10, 1, 2, 3};
-        int[] a2 = {3, 2, 1};
+        int[] a2 = {3, 1, 2};
         int[] a3 = {3, 5, 1, 2};
 
-        System.out.println(Search(a1, 10));
+        System.out.println(Search(a1, 7));
         System.out.println(Search(a2, 1));
         System.out.println(Search(a3, 6));
     }

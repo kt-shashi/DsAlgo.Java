@@ -24,7 +24,7 @@ public class BinarySearchDemo {
         int upperLimit = a.length;
         int middleValue = (lowerLimit + upperLimit) / 2;
 
-        while (lowerLimit < upperLimit) {
+        while (lowerLimit <= upperLimit) {
             if (a[middleValue] < n) {
                 lowerLimit = middleValue + 1;
             } else if (a[middleValue] > n) {
@@ -36,7 +36,6 @@ public class BinarySearchDemo {
         }
 
         return -1;
-
     }
 
 }
