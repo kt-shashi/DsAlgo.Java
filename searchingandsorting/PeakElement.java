@@ -29,7 +29,7 @@ public class PeakElement {
 
     public static int peakElement(int[] a, int n) {
         if (n == 1)
-            return 1;
+            return 0;
 
         if (a[0] >= a[1]) {
             return 0;
